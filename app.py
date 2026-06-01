@@ -27,9 +27,9 @@ MAX_LEN = 200
 
 @st.cache_resource
 def load_all_models():
-    rnn_model = tf.keras.models.load_model("simple_rnn.h5")
-    lstm_model = tf.keras.models.load_model("lstm_model.h5")
-    gru_model = tf.keras.models.load_model("gru_model.h5")
+    rnn_model = tf.keras.models.load_model("simple_rnn.keras")
+    lstm_model = tf.keras.models.load_model("lstm_model.keras")
+    gru_model = tf.keras.models.load_model("gru_model.keras")
 
     return rnn_model, lstm_model, gru_model
 

@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 import plotly.express as px
@@ -27,10 +27,9 @@ MAX_LEN = 200
 
 @st.cache_resource
 def load_all_models():
-
-    rnn_model = load_model("simple_rnn.keras")
-    lstm_model = load_model("lstm_model.keras")
-    gru_model = load_model("gru_model.keras")
+    rnn_model = tf.keras.models.load_model("simple_rnn.h5")
+    lstm_model = tf.keras.models.load_model("lstm_model.h5")
+    gru_model = tf.keras.models.load_model("gru_model.h5")
 
     return rnn_model, lstm_model, gru_model
 
